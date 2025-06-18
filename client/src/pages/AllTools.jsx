@@ -9,7 +9,8 @@ const AllTools = () => {
   const [filter, setFilter] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [nameFilter, setNameFilter] = useState('');
+  const [nameFilter, setNameFilter] = useState("");
+  const [loadingFavId, setLoadingFavId] = useState(null);
 
   const fetchTools = async () => {
     try {
@@ -26,17 +27,22 @@ const AllTools = () => {
   };
 
   const addToFav = async (id) => {
+    setLoadingFavId(id);
     try {
       await axios.post("http://localhost:5000/api/favorites", { toolId: id });
       alert("Tool added to favorites!");
     } catch (err) {
       alert(err?.response?.data?.error || "Failed to add");
+    } finally {
+      setLoadingFavId(null);
     }
   };
 
   const applyNameFilter = () => {
     const lower = nameFilter.toLowerCase();
-    const filtered = tools.filter(tool => tool.name.toLowerCase().includes(lower));
+    const filtered = tools.filter((tool) =>
+      tool.name.toLowerCase().includes(lower)
+    );
     setFilteredTools(filtered);
   };
 
@@ -83,7 +89,7 @@ const AllTools = () => {
       ) : (
         <div className="row">
           {filteredTools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} onFav={addToFav} />
+            <ToolCard key={tool.id} tool={tool} onFav={addToFav} loadingFavId={loadingFavId} />
           ))}
         </div>
       )}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ToolCard = ({ tool, onFav, showFavBtn = true, onRemove }) => {
+const ToolCard = ({ tool, onFav, showFavBtn = true, onRemove, loadingFavId }) => {
   return (
     <div className="col-md-4 mb-4">
       <div className="card h-100 shadow-sm">
@@ -14,8 +14,13 @@ const ToolCard = ({ tool, onFav, showFavBtn = true, onRemove }) => {
             <button
               className="btn btn-sm btn-outline-danger ms-2"
               onClick={() => onFav(tool.id)}
+              disabled={loadingFavId === tool.id}
             >
-              ❤️ Favorite
+              {loadingFavId === tool.id ? (
+                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              ) : (
+                '❤ Favorite'
+              )}
             </button>
           ) : (
             <button
