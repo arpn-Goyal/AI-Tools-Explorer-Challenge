@@ -11,7 +11,7 @@ A full-stack MERN application that allows users to **browse**, **filter**, and *
 - ❤️ **Add to favorites** (with confetti animation 🎉)
 - ❌ **Remove from favorites**
 - 📊 **Bonus:
-- 🎉 **with confetti animation on Save 
+- 🎉 **Confetti animation on Save
 - 🌗 **Dark mode toggle**
 - 📱 **Responsive layout**
 - 🔄 **Loading spinners** & error messages
@@ -47,12 +47,12 @@ cd server
 npm install
 
 # 3. Start backend
-node index.js
+npm run start
 
 # 4. In another terminal, run frontend
 cd ../client
 npm install
-npm start
+npm run dev
 
 
 📁 Folder Structure
