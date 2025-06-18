@@ -1,0 +1,45 @@
+/* GLOBAL DARK MODE STYLES */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Bootstrap component overrides */
+.dark-mode .card {
+  background-color: #1f1f1f;
+  color: #fff;
+  border-color: #333;
+}
+
+.dark-mode .form-control {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.dark-mode .form-control::placeholder {
+  color: #aaa;
+}
+
+.dark-mode .btn-dark {
+  background-color: #444;
+  border-color: #444;
+}
+
+.dark-mode .btn-light {
+  background-color: #eee;
+  color: #000;
+}
+
+/* Optional: alerts */
+.dark-mode .alert-warning {
+  background-color: #333;
+  color: #ffc107;
+  border-color: #444;
+}
+
+.dark-mode .alert-danger {
+  background-color: #521414;
+  color: #f8d7da;
+  border-color: #7f1d1d;
+}
