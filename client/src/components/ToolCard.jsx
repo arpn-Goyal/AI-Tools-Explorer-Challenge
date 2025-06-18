@@ -6,7 +6,7 @@ const ToolCard = ({ tool, onFav, showFavBtn = true, onRemove, loadingFavId }) =>
       <div className="card h-100 shadow-sm">
         <div className="card-body">
           <h5 className="card-title">{tool.name}</h5>
-          <p className="card-subtitle mb-2 text-muted">{tool.category}</p>
+          <p className="card-subtitle mb-2 text-muted text-white">{tool.category}</p>
           <p className="card-text">{tool.excerpt}</p>
           <a href={tool.url} className="btn btn-sm btn-primary" target="_blank" rel="noreferrer">Visit</a>
 

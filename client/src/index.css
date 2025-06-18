@@ -13,12 +13,16 @@
 
 .dark-mode .form-control {
   background-color: #2a2a2a;
-  color: #fff;
+  color: #fff; 
   border: 1px solid #555;
 }
 
 .dark-mode .form-control::placeholder {
   color: #aaa;
+}
+
+.dark-mode .text-white{
+  color: white !important;
 }
 
 .dark-mode .btn-dark {
