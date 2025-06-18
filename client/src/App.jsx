@@ -18,8 +18,9 @@ const App = () => {
 
   return (
     <Router>
+      
       <nav className={`navbar navbar-expand-lg ${darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'} px-3`}>
-        <NavLink className="navbar-brand" to="/">AI Tools</NavLink>
+        <NavLink className="navbar-brand" to="/">AI Tools Explorer </NavLink>
         
         <button
           className="navbar-toggler"
