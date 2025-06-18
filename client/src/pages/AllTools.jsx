@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ToolCard from "../components/ToolCard";
 import Spinner from "../components/Spinner";
+import confetti from 'canvas-confetti';
 import axios from "axios";
 
 const AllTools = () => {
@@ -30,6 +31,7 @@ const AllTools = () => {
     setLoadingFavId(id);
     try {
       await axios.post("http://localhost:5000/api/favorites", { toolId: id });
+      confetti();
       alert("Tool added to favorites!");
     } catch (err) {
       alert(err?.response?.data?.error || "Failed to add");
@@ -53,6 +55,7 @@ const AllTools = () => {
   useEffect(() => {
     fetchTools();
   }, [filter]);
+
 
   return (
     <div>
